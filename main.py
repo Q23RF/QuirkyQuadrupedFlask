@@ -15,6 +15,7 @@ def get_random_vid(playlist_url):
     url = urls[random.randint(0, len(urls) - 1)]
     return url
 
+
 mspl = "https://www.youtube.com/playlist?list=OLAK5uy_mhIfeEQekE1BSH2Qzwj-3AU-wTzIiC2Q4"
 
 
@@ -23,7 +24,7 @@ def index():
     ua = request.headers.get('User-Agent')
     if ua == 'pipedream/1':
         url = get_random_vid(mspl)
-        txt = "#推歌 #每日梯曲 \n"
+        txt = "#推歌 #每日梯曲 #ATEEZ \n"
         mastodon.status_post(txt + url)
     return 'Hello!'
 
